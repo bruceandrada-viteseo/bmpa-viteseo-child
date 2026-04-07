@@ -14,8 +14,8 @@ if ( $show_footer ) :
 	?>
 
 <footer style="background: <?php echo esc_attr( $footer_color ); ?>; padding: 20px; text-align: center;">
-	<h1 style="color: <?php echo esc_attr( get_theme_mod('hero_text_color', '#ffffff') ); ?>">
-    <?php echo esc_html( get_theme_mod('footer_text') ); ?>
+	<h1 style="color: <?php echo esc_attr( get_theme_mod( 'hero_text_color', '#ffffff' ) ); ?>">
+	<?php echo esc_html( get_theme_mod( 'footer_text' ) ); ?>
 </h1>
 </footer>
 
