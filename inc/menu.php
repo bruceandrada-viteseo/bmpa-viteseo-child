@@ -1,10 +1,23 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit;
+/**
+ * Menu Registration
+ *
+ * @package BMPA_ViteSEO_Child
+ */
 
-function bmpa_register_menus() {
-    register_nav_menus([
-        'primary' => __('Primary Menu', 'bmpa-viteseo-child'),
-    ]);
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
-add_action('after_setup_theme', 'bmpa_register_menus');
+/**
+ * Register navigation menus for the theme.
+ */
+function bmpa_register_menus() {
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'bmpa-viteseo-child' ),
+		)
+	);
+}
+
+add_action( 'after_setup_theme', 'bmpa_register_menus' );

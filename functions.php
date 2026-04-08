@@ -15,5 +15,7 @@ $child_theme_dir = get_stylesheet_directory();
 require $child_theme_dir . '/inc/enqueue.php';
 require $child_theme_dir . '/inc/menu.php';
 require $child_theme_dir . '/inc/customizer.php';
+require $child_theme_dir . '/inc/class-bmpa-multi-select-control.php';
 require $child_theme_dir . '/inc/helpers.php';
 require $child_theme_dir . '/inc/post-types.php';
+require $child_theme_dir . '/inc/api.php';
