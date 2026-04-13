@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	?>
 
-<meta name="description" content="<?php echo esc_attr( $meta_description ); ?>">
+<meta name="description" content="<?php echo esc_attr( $bmpa_meta_description ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>

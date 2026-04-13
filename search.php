@@ -8,51 +8,32 @@
 get_header();
 ?>
 
-<main class="content">
+<div class="main-layout">
 
-	<h1>Search results for: "<?php echo get_search_query(); ?>"</h1>
+	<!-- LEFT -->
+	<div class="main-content">
 
-	<?php if ( is_active_sidebar( 'bmpa-custom-sidebar' ) ) : ?>
-		<aside class="bmpa-sidebar-search">
-			<?php dynamic_sidebar( 'bmpa-custom-sidebar' ); ?>
-		</aside>
-	<?php endif; ?>
+		<h1>Search results for: "<?php echo get_search_query(); ?>"</h1>
 
-	<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() ) : ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
+				<article class="search-item">
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<?php the_excerpt(); ?>
+				</article>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-			?>
+	</div>
 
-			<article class="search-item">
+	<!-- RIGHT -->
+	<aside class="bmpa-sidebar-search">
+		<?php dynamic_sidebar( 'bmpa-custom-sidebar' ); ?>
+	</aside>
 
-				<h2>
-					<a href="<?php the_permalink(); ?>">
-						<?php the_title(); ?>
-					</a>
-				</h2>
-
-				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="project-image">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail( 'medium' ); ?>
-						</a>
-					</div>
-				<?php endif; ?>
-
-				<p><?php the_excerpt(); ?></p>
-
-			</article>
-
-		<?php endwhile; ?>
-
-	<?php else : ?>
-
-		<p>No results found.</p>
-
-	<?php endif; ?>
-
-</main>
+</div>
 
 <?php get_footer(); ?>

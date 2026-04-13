@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $bmpa_child_theme_dir = get_stylesheet_directory();
 
 require $bmpa_child_theme_dir . '/inc/enqueue.php';
+require $bmpa_child_theme_dir . '/inc/theme-setup.php';
 require $bmpa_child_theme_dir . '/inc/menu.php';
 require $bmpa_child_theme_dir . '/inc/customizer.php';
 require $bmpa_child_theme_dir . '/inc/class-bmpa-multi-select-control.php';
