@@ -42,7 +42,9 @@ add_action( 'pre_get_posts', 'bmpa_modify_project_archive' );
 
 
 /**
- * Include Custom Post Types in search results
+ * Include Custom Post Types in search results.
+ *
+ * @param WP_Query $query Main query instance.
  */
 function bmpa_include_cpt_in_search( $query ) {
 
@@ -50,7 +52,7 @@ function bmpa_include_cpt_in_search( $query ) {
 
 		$query->set(
 			'post_type',
-			array( 'post', 'page', 'project' ) // 👈 add mo CPT mo dito
+			array( 'post', 'page', 'project' )
 		);
 	}
 

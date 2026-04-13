@@ -1,6 +1,8 @@
 <?php
 /**
  * Search Template
+ *
+ * @package Bmpa_Viteseo_Child
  */
 
 get_header();
@@ -18,7 +20,10 @@ get_header();
 
 	<?php if ( have_posts() ) : ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
 
 			<article class="search-item">
 

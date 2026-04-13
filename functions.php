@@ -36,7 +36,7 @@ function bmpa_enqueue_scripts() {
 		'1.0.0'
 	);
 
-	// JS
+	// JS.
 	wp_enqueue_script(
 		'bmpa-script',
 		get_stylesheet_directory_uri() . '/assets/js/scripts.js',
@@ -46,15 +46,19 @@ function bmpa_enqueue_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'bmpa_enqueue_scripts' );
-
+/**
+ * Simulates plugin script conflict.
+ *
+ * @return void
+ */
 function fake_plugin_script() {
-    ?>
-    <script>
-        function showMessage() {
-            console.log("Plugin Script Override");
-        }
-        showMessage();
-    </script>
-    <?php
+	?>
+	<script>
+		function showMessage() {
+			console.log("Plugin Script Override");
+		}
+		showMessage();
+	</script>
+	<?php
 }
-add_action('wp_footer', 'fake_plugin_script');
+add_action( 'wp_footer', 'fake_plugin_script' );
