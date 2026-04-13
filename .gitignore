@@ -27,5 +27,7 @@ wp-content/cache/
 
 # Misc
 *.zip
-
 *.md
+
+# Local test config
+wp-tests-config.php
