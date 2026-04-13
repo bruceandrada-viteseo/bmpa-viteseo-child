@@ -8,10 +8,9 @@
 get_header(); ?>
 
 <main>
-	<aside class="bmpa-sidebar">
+<aside class="bmpa-sidebar">
 		<?php dynamic_sidebar( 'bmpa-custom-sidebar' ); ?>
 	</aside>
-
 	<div class="back-link">
 		<a href="<?php echo esc_url( get_post_type_archive_link( 'project' ) ); ?>">
 			← Back to Projects

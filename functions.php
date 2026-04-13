@@ -19,6 +19,7 @@ require $child_theme_dir . '/inc/class-bmpa-multi-select-control.php';
 require $child_theme_dir . '/inc/helpers.php';
 require $child_theme_dir . '/inc/post-types.php';
 require $child_theme_dir . '/inc/api.php';
+require $child_theme_dir . '/inc/widgets/sidebar.php';
 
 /**
  * Enqueue custom scripts for the child theme.
@@ -26,6 +27,16 @@ require $child_theme_dir . '/inc/api.php';
  * @return void
  */
 function bmpa_enqueue_scripts() {
+
+	// ✅ LOAD STYLE.CSS (IMPORTANT)
+	wp_enqueue_style(
+		'bmpa-style',
+		get_stylesheet_uri(),
+		array(),
+		'1.0.0'
+	);
+
+	// JS
 	wp_enqueue_script(
 		'bmpa-script',
 		get_stylesheet_directory_uri() . '/assets/js/scripts.js',
