@@ -20,13 +20,8 @@ jobs:
       - name: Install dependencies
         run: composer install
 
-      - name: Allow Composer Plugin
-        run: composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-
-      - name: Install PHPCS & WPCS
-        run: |
-          composer require --dev squizlabs/php_codesniffer wp-coding-standards/wpcs
-          vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+      - name: Configure PHPCS
+        run: vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
 
       - name: Run PHPCS
         run: vendor/bin/phpcs --standard=WordPress --ignore=vendor/*,tests/*,wp-tests-config* .
