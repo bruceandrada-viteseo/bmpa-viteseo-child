@@ -34,17 +34,16 @@ get_header();
 	<div class="project-grid">
 
 		<?php
-		$args = array(
+		$bmpa_args = array(
 			'post_type'      => 'project',
 			'posts_per_page' => 6,
 		);
 
-		$projects = new WP_Query( $args );
+		$bmpa_projects = new WP_Query( $bmpa_args );
 
-		if ( $projects->have_posts() ) :
-			while ( $projects->have_posts() ) :
-				$projects->the_post();
-
+		if ( $bmpa_projects->have_posts() ) :
+			while ( $bmpa_projects->have_posts() ) :
+				$bmpa_projects->the_post();
 				get_template_part( 'parts/card' );
 
 			endwhile;

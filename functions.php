@@ -10,17 +10,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$child_theme_dir = get_stylesheet_directory();
+$bmpa_child_theme_dir = get_stylesheet_directory();
 
-require $child_theme_dir . '/inc/enqueue.php';
-require $child_theme_dir . '/inc/menu.php';
-require $child_theme_dir . '/inc/customizer.php';
-require $child_theme_dir . '/inc/class-bmpa-multi-select-control.php';
-require $child_theme_dir . '/inc/helpers.php';
-require $child_theme_dir . '/inc/post-types.php';
-require $child_theme_dir . '/inc/api.php';
-require $child_theme_dir . '/inc/widgets/sidebar.php';
-
+require $bmpa_child_theme_dir . '/inc/enqueue.php';
+require $bmpa_child_theme_dir . '/inc/menu.php';
+require $bmpa_child_theme_dir . '/inc/customizer.php';
+require $bmpa_child_theme_dir . '/inc/class-bmpa-multi-select-control.php';
+require $bmpa_child_theme_dir . '/inc/helpers.php';
+require $bmpa_child_theme_dir . '/inc/post-types.php';
+require $bmpa_child_theme_dir . '/inc/api.php';
+require $bmpa_child_theme_dir . '/inc/widgets/sidebar.php';
 /**
  * Enqueue custom scripts for the child theme.
  *
@@ -51,7 +50,7 @@ add_action( 'wp_enqueue_scripts', 'bmpa_enqueue_scripts' );
  *
  * @return void
  */
-function fake_plugin_script() {
+function bmpa_fake_plugin_script() {
 	?>
 	<script>
 		function showMessage() {
@@ -61,4 +60,4 @@ function fake_plugin_script() {
 	</script>
 	<?php
 }
-add_action( 'wp_footer', 'fake_plugin_script' );
+add_action( 'wp_footer', 'bmpa_fake_plugin_script' );

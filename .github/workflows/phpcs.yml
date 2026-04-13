@@ -25,4 +25,4 @@ jobs:
           vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra
 
       - name: Run PHPCS
-        run: vendor/bin/phpcs --standard=WordPress --ignore=vendor/*,tests/*,wp-tests-config* .
+        run: vendor/bin/phpcs --standard=phpcs.xml
