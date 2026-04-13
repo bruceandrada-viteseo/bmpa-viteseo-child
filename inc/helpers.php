@@ -39,3 +39,23 @@ function bmpa_modify_project_archive( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'bmpa_modify_project_archive' );
+
+
+/**
+ * Include Custom Post Types in search results.
+ *
+ * @param WP_Query $query Main query instance.
+ */
+function bmpa_include_cpt_in_search( $query ) {
+
+	if ( $query->is_search() && $query->is_main_query() && ! is_admin() ) {
+
+		$query->set(
+			'post_type',
+			array( 'post', 'page', 'project' )
+		);
+	}
+
+	return $query;
+}
+add_action( 'pre_get_posts', 'bmpa_include_cpt_in_search' );

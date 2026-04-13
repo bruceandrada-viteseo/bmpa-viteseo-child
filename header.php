@@ -15,17 +15,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<?php
 	if ( is_singular() ) {
-		$desc = get_the_excerpt();
-		if ( ! $desc ) {
-			$desc = get_the_title();
+		$bmpa_desc = get_the_excerpt();
+		if ( ! $bmpa_desc ) {
+			$bmpa_desc = get_the_title();
 		}
-		$meta_description = trim( wp_strip_all_tags( $desc ) );
+		$bmpa_meta_description = trim( wp_strip_all_tags( $bmpa_desc ) );
 	} else {
-		$meta_description = get_bloginfo( 'description' );
+		$bmpa_meta_description = get_bloginfo( 'description' );
 	}
 	?>
 
-<meta name="description" content="<?php echo esc_attr( $meta_description ); ?>">
+<meta name="description" content="<?php echo esc_attr( $bmpa_meta_description ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<?php wp_head(); ?>
 </head>

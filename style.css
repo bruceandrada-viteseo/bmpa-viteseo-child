@@ -187,7 +187,8 @@ footer {
 
 
 /* SINGLE PROJECT PAGE */
-main .single-project {
+main .single-project,
+main .bmpa-sidebar{
 	max-width: 880px;
 	margin: 40px auto;
 	padding: 30px 20px;
@@ -251,4 +252,59 @@ main .single-project {
 	.single-project {
 		padding: 15px;
 	}
+}
+
+/* SIDEBAR */
+.bmpa-sidebar,
+.bmpa-sidebar-search {
+	margin-top: 40px;
+	padding: 20px;
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+}
+
+.bmpa-widget,
+.bmpa-sidebar-search {
+	margin-bottom: 20px;
+}
+
+.bmpa-widget h2,
+.bmpa-widget h3,
+.bmpa-sidebar-search h2,
+.bmpa-sidebar-search h3 {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+
+.bmpa-sidebar-search .wp-block-quote,
+.bmpa-sidebar .wp-block-quote {
+	padding: 0;
+	margin: 0;
+}
+
+.main-layout {
+	display: flex;
+	gap: 40px;
+	align-items: flex-start;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.main-content {
+	flex: 3;
+	max-width: 800px;
+}
+
+.main-layout .bmpa-sidebar,
+.main-layout .bmpa-sidebar-search {
+	flex: 1;
+	max-width: 300px;
+	min-width: 250px;
+	background: #f9f9f9;
+	padding: 20px;
+	border-radius: 10px;
+	position: sticky;
+	top: 20px;
 }
