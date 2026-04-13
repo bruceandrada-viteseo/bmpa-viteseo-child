@@ -15,19 +15,14 @@ Text Domain: bmpa-viteseo-child
 Tags: custom-child-theme, customization, block-theme
 */
 
-html, body {
-
-	margin: 0;
-}
-
-.site-wrapper {
+body {
+	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
-	min-height: calc(100vh - 150px);
 }
 
-main {
-	flex: 1;
+footer {
+	margin-top: auto;
 }
 
 .content {
@@ -122,6 +117,12 @@ main {
 	box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 	transition: 0.3s;
 	text-align: center;
+}
+
+@-moz-document url-prefix() {
+	.card {
+		background: blue;
+	}
 }
 
 /* HOVER EFFECT */

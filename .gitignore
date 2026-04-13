@@ -1,1 +1,31 @@
+# Composer
+/vendor/
+
+# PHPUnit
+.phpunit.result.cache
+
+# Logs
+*.log
+debug.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# WordPress uploads
+wp-content/uploads/
+
+# Cache
+wp-content/cache/
+
+# Misc
+*.zip
+
 *.md
