@@ -20,5 +20,10 @@ jobs:
       - name: Install dependencies
         run: composer install
 
+      - name: Install PHPCS & WPCS
+        run: |
+          composer require --dev squizlabs/php_codesniffer wp-coding-standards/wpcs
+          vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs
+
       - name: Run PHPCS
         run: vendor/bin/phpcs --standard=WordPress --ignore=vendor/*,tests/*,wp-tests-config* .
